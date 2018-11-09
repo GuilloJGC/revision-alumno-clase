@@ -6,6 +6,8 @@ public class Alumno {
     private String numeroMatricula;
     // la edad del alumno
     private int edad;
+    private int longitudNombre;
+    private int longitudMatricula;
 
     /**
      * Crea un alumno nuevo
@@ -15,8 +17,8 @@ public class Alumno {
         nombre = nombreCompleto;
         numeroMatricula = numeroMatriculaAlumno;
         edad = edadAlumno;
-        int longitudNombre = nombre.length();
-        int longitudMatricula = numeroMatricula.length();
+        longitudNombre = nombre.length();
+        longitudMatricula = numeroMatricula.length();
         if(longitudNombre < 3) {
             System.out.println("Es necesario introducir al menos 3 caracteres en el campo 'nombre'"); 
         }
@@ -51,6 +53,6 @@ public class Alumno {
      * en su cuenta de Github en formato de 7 caracateres
      */
     public String getNombreUsuarioGithub() {
-        return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
+        return nombre.substring(0, longitudNombre) + numeroMatricula.substring(0, longitudMatricula);
     }
 }
