@@ -1,5 +1,5 @@
 public class Alumno {
-    
+
     // el nombre completo del alumno
     private String nombre;
     // el numero de matricula
@@ -11,9 +11,18 @@ public class Alumno {
      * Crea un alumno nuevo
      */
     public Alumno(String nombreCompleto, String numeroMatriculaAlumno, int edadAlumno) {
+        
         nombre = nombreCompleto;
         numeroMatricula = numeroMatriculaAlumno;
         edad = edadAlumno;
+        int longitudNombre = nombre.length();
+        int longitudMatricula = numeroMatricula.length();
+        if(longitudNombre < 3) {
+            System.out.println("Es necesario introducir al menos 3 caracteres en el campo 'nombre'"); 
+        }
+        if(longitudMatricula < 4) {
+            System.out.println("Es necesario introducir al menos 4 caracteres en el campo 'matricula'"); 
+        }    
     }
 
     /**
@@ -22,21 +31,21 @@ public class Alumno {
     public String getNombre() {
         return nombre;
     }
-    
+
     /**
      * Cambia el nombre del alumno
      */
     public void cambiarnombre(String nuevoNombre) {
         nombre = nuevoNombre;
     }
-    
+
     /**
      * Imprime por pantalla los detalles del alumno
      */
     public void imprimeDetalles() {
         System.out.println(nombre + " (" + numeroMatricula + ") - " + edad + " años");
     }
-    
+
     /**
      * Devuelve el nombre de usuario que el alumno debe configurar
      * en su cuenta de Github en formato de 7 caracateres
